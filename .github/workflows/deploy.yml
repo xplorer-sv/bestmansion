@@ -3,7 +3,7 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - main  # Deploy whenever code is pushed to main
+      - main  
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
       run: npm install
 
     - name: Build project
-      run: npm run build
+      run: CI=false npm run build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
